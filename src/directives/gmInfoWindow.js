@@ -75,6 +75,7 @@
       //Decorate infoWindow.open to $compile contents before opening
       var _open = infoWindow.open;
       infoWindow.open = function open(map, anchor) {
+		$compile(element.contents())(scope);
         _open.call(infoWindow, map, anchor);
       };
     }
